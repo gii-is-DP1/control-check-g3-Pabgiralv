@@ -21,6 +21,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
@@ -45,6 +46,12 @@ public class Visit extends BaseEntity {
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private LocalDate date;
 
+	
+	@ManyToOne(optional = true)
+	@JoinColumn(name = "recovery_room_id")
+	RecoveryRoom recoveryRoom;
+	
+	
 	/**
 	 * Holds value of property description.
 	 */
@@ -114,13 +121,15 @@ public class Visit extends BaseEntity {
 		this.pet = pet;
 	}
 
+	
+	
 	public RecoveryRoom getRecoveryRoom() {
-		// To be implemented
-		return null;
+		return recoveryRoom;
 	}
 
-	public void setRecoveryRoom(RecoveryRoom room) {
-		// To be implemented
+	public void setRecoveryRoom(RecoveryRoom recoveryRoom) {
+		this.recoveryRoom = recoveryRoom;
 	}
+
 
 }

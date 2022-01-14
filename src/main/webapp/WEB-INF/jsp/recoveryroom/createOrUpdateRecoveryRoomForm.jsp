@@ -24,12 +24,12 @@
                 <petclinic:inputField label="Room size in m2" name="size"/>
                 <petclinic:checkboxField label="Secure room?" name="secure"/>
                 <div class="control-group">
-                    <petclinic:selectField name="type" label="Room type " names="${types}" size="5"/>
+                    <petclinic:selectField name="roomType" label="Room type " names="${types}" size="5"/>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-default" type="submit">Update Room</button>
+                    <button class="btn btn-default" type="submit">Create Room</button>
                 </div>
             </div>
         </form:form>
